@@ -1,0 +1,38 @@
+﻿@model List<Assenza>
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Ora</th>
+                <th>Durata</th>
+            </tr>     
+        </thead>
+        <tbody>
+            @foreach(Assenza a in Model)
+            {
+                <tr>
+                    <td>
+                        @String.Format("{0:d}",a.Data)
+                    </td>
+                    <td>
+                        @a.Tipo
+                    </td>
+                    <td>
+                        @if(a.Ora!=null)
+                        {
+                            @a.Ora
+                        } 
+                    </td>
+                    <td>
+                        @a.Durata
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
